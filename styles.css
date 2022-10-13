@@ -63,6 +63,24 @@ main{
     font-weight: 300;
 }
 
+.card button{
+    background:none;
+    border:none;
+    color:rgb(97, 97, 97);
+}
+
+.card button.read{
+    color:rgb(89, 131, 89);
+}
+
+.readStatus:hover{
+    color:rgb(45, 112, 45);
+}
+
+.removeBook:hover{
+    color:rgb(105, 33, 33);
+}
+
 footer{
     margin:auto auto 1em auto;
     font-family:'Abel', sans-serif;
