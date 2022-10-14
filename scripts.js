@@ -28,6 +28,8 @@ function displayBooks() {
         const readStatus = document.createElement('button');
         const removeBook = document.createElement('button');
 
+        card.id = i;
+
         card.classList.add('card');
         data.classList.add('data');
         title.classList.add('title');
@@ -38,7 +40,6 @@ function displayBooks() {
         removeBook.classList.add('removeBook');
 
         if(myLibrary[i].isRead) readStatus.classList.add('read');
-
 
         title.innerHTML = myLibrary[i].title;
         author.innerHTML = myLibrary[i].author;
@@ -62,6 +63,12 @@ function displayBooks() {
         readStatus.addEventListener('click', (e) => {
             e.currentTarget.classList.toggle('read');
         });
+
+        removeBook.addEventListener('click', (e) => {
+            let cardToRemove = e.currentTarget.parentNode.parentNode;
+            myLibrary.splice(i, 1);
+            cardToRemove.remove();
+        })
     }
 }
 
