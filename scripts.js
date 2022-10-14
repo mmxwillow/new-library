@@ -9,6 +9,10 @@ function Book(title, author, pages, isRead) {
     this.isRead = isRead;
 }
 
+Book.prototype.changeStatus = function () {
+    this.isRead = !this.isRead;
+}
+
 function addBook(book) {
     myLibrary.push(book);
 }
@@ -53,6 +57,11 @@ function displayBooks() {
         card.appendChild(icons);
 
         main.appendChild(card);
+
+        readStatus.addEventListener('click', myLibrary[i].changeStatus.bind(myLibrary[i]));
+        readStatus.addEventListener('click', (e) => {
+            e.currentTarget.classList.toggle('read');
+        });
     }
 }
 

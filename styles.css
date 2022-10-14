@@ -73,10 +73,6 @@ main{
     color:rgb(89, 131, 89);
 }
 
-.readStatus:hover{
-    color:rgb(45, 112, 45);
-}
-
 .removeBook:hover{
     color:rgb(105, 33, 33);
 }
