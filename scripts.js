@@ -28,6 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+document.querySelector('#close-menu').addEventListener('click', () => {
+    document.querySelector('.mobile-menu').classList.remove('visible');
+});
+
+document.querySelector('#open-menu').addEventListener('click', () => {
+    document.querySelector('.mobile-menu').classList.add('visible');
+});
+
 function closeForm(){
     form.style.visibility="hidden";
     cover.style.visibility="hidden";

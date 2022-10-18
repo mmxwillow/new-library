@@ -181,6 +181,10 @@ header svg{
     display: none;
 }
 
+.mobile-menu{
+    display: none;
+}
+
 @media (max-width:420px){
     #add-book{
         bottom:1em;
@@ -210,5 +214,32 @@ header svg{
     }
     form input, form button{
         font-size:16px;
+    }
+    .mobile-menu{
+        display:flex;
+        flex-direction:column;
+        position:fixed;
+        background-color:#222;
+        width:calc(100vw - 4em);
+        height:100vh;
+        top:0;
+        right:-100vw;
+        margin:0;
+        padding:1.5em 2em;
+        gap:0.5em;
+        list-style-type:none;
+        font-family: 'Abel', sans-serif;
+        font-weight: bold;
+        font-size: 22px;
+        z-index: 1;
+        transition:0.5s;
+    }
+    .visible{
+        right:0;
+    }
+    #close-menu{
+        position: absolute;
+        top:1.5em;
+        right:calc((100vw - 203px)/4);
     }
 }
