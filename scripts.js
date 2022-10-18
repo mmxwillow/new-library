@@ -3,17 +3,35 @@ const open = document.querySelector('#add-book');
 const close = document.querySelector('#close');
 const form = document.querySelector('form');
 const cover = document.querySelector('.cover');
+const submit = document.querySelector('#submit');
 
 close.addEventListener('click', closeForm);
+cover.addEventListener('click', closeForm);
 
 open.addEventListener('click', () =>{
     form.style.visibility="visible";
     cover.style.visibility="visible";
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    submit.addEventListener('click', (ev) => {
+        ev.preventDefault();
+        const title = document.querySelector('input[name="title"]').value;
+        const author = document.querySelector('input[name="author"]').value;
+        const pages = document.querySelector('input[name="pages"]').value;
+        const isRead = document.querySelector('input[type="checkbox"]').checked;
+    
+        const newBook = new Book(title,author,pages,isRead);
+        addBook(newBook);
+        displayBooks();
+        closeForm();
+    });
+});
+
 function closeForm(){
     form.style.visibility="hidden";
     cover.style.visibility="hidden";
+    form.reset();
 }
 
 let myLibrary = [];
@@ -34,6 +52,8 @@ function addBook(book) {
 }
 
 function displayBooks() {
+    main.innerHTML = "";
+    
     for (let i = 0; i < myLibrary.length; i++) {
         const card = document.createElement('div');
         const data = document.createElement('div');

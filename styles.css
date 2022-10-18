@@ -157,7 +157,7 @@ input:checked::after{
     color:rgb(89, 131, 89);
 }
 
-input[type="submit"]{
+#submit{
     background-color:rgb(89, 131, 89);
     color:white;
 }
