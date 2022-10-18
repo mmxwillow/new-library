@@ -107,7 +107,7 @@ form{
     display:flex;
     flex-direction: column;
     position: fixed;
-    width:min(400px,80vw);
+    width:min(400px,70vw);
     height:max-content;
     top: 50%;
     left: 50%;
@@ -175,4 +175,40 @@ footer{
 
 footer a{
     color: rgb(134, 60, 134);
+}
+
+header svg{
+    display: none;
+}
+
+@media (max-width:420px){
+    #add-book{
+        bottom:1em;
+        right:1em;
+        font-size:26px;
+    }
+    .card{
+        font-size:14px;
+    }
+    .card .title{
+        font-size:18px;
+    }
+    footer{
+        font-size:14px;
+    }
+    header{
+        font-size:22px;
+        gap:5em;
+    }
+    .links{
+        display: none;
+    }
+    header svg{
+        display:block;
+        color:rgb(211, 211, 211);
+        align-self: center;
+    }
+    form input, form button{
+        font-size:16px;
+    }
 }
