@@ -1,4 +1,20 @@
 const main = document.querySelector('main');
+const open = document.querySelector('#add-book');
+const close = document.querySelector('#close');
+const form = document.querySelector('form');
+const cover = document.querySelector('.cover');
+
+close.addEventListener('click', closeForm);
+
+open.addEventListener('click', () =>{
+    form.style.visibility="visible";
+    cover.style.visibility="visible";
+});
+
+function closeForm(){
+    form.style.visibility="hidden";
+    cover.style.visibility="hidden";
+}
 
 let myLibrary = [];
 
