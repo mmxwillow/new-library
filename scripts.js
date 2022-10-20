@@ -44,15 +44,16 @@ function closeForm(){
 
 let myLibrary = [];
 
-function Book(title, author, pages, isRead) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.isRead = isRead;
-}
-
-Book.prototype.changeStatus = function () {
-    this.isRead = !this.isRead;
+class Book{
+    constructor(title, author, pages, isRead) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.isRead = isRead;
+    }
+    changeStatus(){
+        this.isRead = !this.isRead;
+    }
 }
 
 function addBook(book) {
