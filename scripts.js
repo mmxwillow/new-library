@@ -16,9 +16,44 @@ open.addEventListener('click', () =>{
 document.addEventListener('DOMContentLoaded', () => {
     submit.addEventListener('click', (ev) => {
         ev.preventDefault();
-        const title = document.querySelector('input[name="title"]').value;
-        const author = document.querySelector('input[name="author"]').value;
-        const pages = document.querySelector('input[name="pages"]').value;
+        form.reportValidity();
+
+        const inputTitle = document.querySelector('input[name="title"]');
+        const inputAuthor = document.querySelector('input[name="author"]');
+        const inputPages = document.querySelector('input[name="pages"]');
+
+        if(inputTitle.validity.valueMissing){
+            inputTitle.setCustomValidity('Please enter title.')
+            return;
+        }
+        else{
+            inputTitle.setCustomValidity('');
+        }
+        if(inputAuthor.validity.valueMissing){
+            inputAuthor.setCustomValidity('Please enter an author.')
+            return;
+        }
+        else{
+            inputAuthor.setCustomValidity('');
+        }
+        if(isNaN(inputPages.value)){
+            inputPages.setCustomValidity('Please enter a numeric value.')
+            return;
+        }
+        else{
+            inputPages.setCustomValidity('');
+        }
+        if(inputPages.validity.valueMissing){
+            inputPages.setCustomValidity('Please enter a number.')
+            return;
+        }
+        else{
+            inputPages.setCustomValidity('');
+        }
+
+        const title = inputTitle.value;
+        const author = inputAuthor.value;
+        const pages = inputPages.value;
         const isRead = document.querySelector('input[type="checkbox"]').checked;
     
         const newBook = new Book(title,author,pages,isRead);
